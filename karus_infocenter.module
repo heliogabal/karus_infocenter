@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Karus Infocenter feature.
+ */
+
+include_once 'karus_infocenter.features.inc';
