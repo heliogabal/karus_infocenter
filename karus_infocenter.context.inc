@@ -74,7 +74,7 @@ function karus_infocenter_context_default_contexts() {
           'module' => 'block',
           'delta' => '5',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-22',
         ),
       ),
     ),

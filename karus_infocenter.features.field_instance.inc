@@ -24,6 +24,13 @@ function karus_infocenter_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'print' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -37,7 +44,7 @@ function karus_infocenter_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
+    'label' => 'Inhalt',
     'required' => 0,
     'settings' => array(
       'display_summary' => 1,
@@ -69,13 +76,15 @@ function karus_infocenter_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -116,7 +125,21 @@ function karus_infocenter_field_default_field_instances() {
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'image_field_caption' => 1,
+      'image_field_caption' => array(
+        'enabled' => 1,
+        'image_field_caption_wrapper' => array(
+          'image_field_caption_default' => array(
+            'format' => 'plain_text',
+            'value' => '',
+          ),
+        ),
+      ),
+      'image_field_caption_wrapper' => array(
+        'image_field_caption_default' => array(
+          'format' => 'plain_text',
+          'value' => '',
+        ),
+      ),
       'max_filesize' => '2 MB',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -131,7 +154,7 @@ function karus_infocenter_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -143,6 +166,13 @@ function karus_infocenter_field_default_field_instances() {
     'description' => 'Tags sind Stichworte, die frei zum Thema des Blogposts gewählt werden können. Neue Begriffe werden den Tags hinzugefügt. Mehrere Begriffe können durch Komme getrennt eingeben werden.',
     'display' => array(
       'default' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'print' => array(
         'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -173,7 +203,7 @@ function karus_infocenter_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -495,7 +525,6 @@ function karus_infocenter_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Beschreibung');
-  t('Body');
   t('Datei');
   t('Dateityp');
   t('Die Links werden nach Tags gruppiert und angeordnet, hier also bitte die gewünschte Link-Gruppe angeben (z.B. Rechtsprechung, Tools).');
@@ -503,6 +532,7 @@ function karus_infocenter_field_default_field_instances() {
   t('Hier die Adresse (URL) des Links eingeben (z.B. http://justiz.hamburg.de)');
   t('Hier lässt sich eine Beschreibung zur Datei eingeben.');
   t('Image');
+  t('Inhalt');
   t('Link');
   t('Stand');
   t('Tags');

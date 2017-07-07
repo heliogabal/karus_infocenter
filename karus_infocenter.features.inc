@@ -33,7 +33,7 @@ function karus_infocenter_node_info() {
       'base' => 'node_content',
       'description' => t('Die InsoNews werden als Blogpost geschrieben und lassen sich somit flexibel anzeigen und leicht erweitern.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'download' => array(
